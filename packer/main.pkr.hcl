@@ -17,7 +17,7 @@ build {
   ]
 
  provisioner "shell" {
-    script = "./setup.sh"
+   script = "./setup.sh"
 execute_command = "sudo {{.Path}}"
 }
 
@@ -26,7 +26,13 @@ source = "../website"
 destination = "/tmp/"
 }
 
+# provisioner "shell" {
+ #   script = "./setup.sh"
+#execute_command = "sudo {{.Path}}"
+#}
+
+
 provisioner "shell" {
-inline = ["sudo cp -r /tmp/website/* /var/www/html","sudo rm -rf /tmp/website"]
+inline = ["sudo cp -r /tmp/website/* /var/www/html/","chown -R apache:apache /var/www/html/*","sudo rm -rf /tmp/website"]
 }
 }
