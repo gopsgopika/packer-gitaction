@@ -33,6 +33,6 @@ destination = "/tmp/"
 
 
 provisioner "shell" {
-inline = ["sudo cp -r /tmp/website/* /var/www/html/","chown -R apache:apache /var/www/html/*","sudo rm -rf /tmp/website"]
+inline = ["sudo cp -r /tmp/website/* /var/www/html/","sudo chown -R apache:apache /var/www/html/*","sudo rm -rf /tmp/website"]
 }
 }
