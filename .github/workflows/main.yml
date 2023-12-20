@@ -30,7 +30,8 @@ jobs:
         working-directory: ./packer/
 
       - name: "Packer validate"
-        run: packer validate ./packer
+        run: packer validate .
+        working-directory: ./packer/
   
       - name: "Packer build image"
         run: packer build .
